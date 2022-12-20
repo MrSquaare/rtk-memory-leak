@@ -1,10 +1,8 @@
 import {configureStore, ListenerEffectAPI} from "@reduxjs/toolkit";
-import {entityMiddleware, entitySlice} from "./slice";
+import {entityMiddleware} from "./middleware";
 
 export const store = configureStore({
-    reducer: {
-        [entitySlice.name]: entitySlice.reducer,
-    },
+    reducer: {},
     middleware: (getDefaultMiddleware) => {
         return getDefaultMiddleware().concat([entityMiddleware.middleware]);
     }

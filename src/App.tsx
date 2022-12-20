@@ -1,5 +1,5 @@
 import './App.css'
-import {useEntityActions} from "./slice";
+import {useEntityActions} from "./middleware";
 
 function App() {
     const entityActions = useEntityActions();
@@ -12,10 +12,6 @@ function App() {
             <br /> <br />
             <button onClick={() => entityActions.unloadEntities()}>
                 Dispatch entity/unload
-            </button>
-            <br /> <br />
-            <button onClick={() => entityActions.removeAll()}>
-                Clear entity store
             </button>
         </div>
     );
